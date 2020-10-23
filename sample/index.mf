@@ -1,0 +1,8 @@
+<setting>
+    <tag load="mofron-comp-yoko">Input</tag>
+</setting>
+
+<Input label="yoko input">
+    <size>2rem,0.7rem</size>
+    <color>#6a7989,#f0e6fa,#ad473c</color>
+</Input>
