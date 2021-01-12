@@ -108,6 +108,9 @@ module.exports = class extends Input {
 		    "input__label-content",
 		    "input__label-content--yoko"
 		]);
+		prm.style({
+                    top: "-" + prm.style("font-size")
+		});
             }
             return super.label(prm,cnf);
 	} catch (e) {
