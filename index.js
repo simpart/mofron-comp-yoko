@@ -86,6 +86,7 @@ module.exports = class extends Input {
 	    this.event(new Focus(fcs_evt));
             
 	    this.size("1.5rem", "0.25rem");
+	    this.color("#787878","#f0f0f0","#ad473c");
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -174,24 +175,6 @@ module.exports = class extends Input {
     }
     
     /**
-     * label color
-     * 
-     * @param (mixed (color)) string: label color, #hex
-     *                        array: [red, green, blue, (alpha)]
-     * @return (mixed) label color
-     *                 null; not set yet
-     * @type parameter
-     */
-    mainColor (prm,opt) {
-        try {
-	    return this.label().mainColor(prm,opt);
-	} catch (e) {
-            console.error(e.stack);
-            throw e;
-        }
-    }
-
-    /**
      * input background color
      * 
      * @param (mixed (color)) string: background color, #hex
@@ -204,9 +187,10 @@ module.exports = class extends Input {
         try {
             if (undefined === prm) {
                 /* getter */
-                return this.confmng("base-color");
+                return this.confmng("baseColor");
             }
             /* setter */
+	    this.confmng("baseColor",prm);
             let clr = comutl.getcolor(prm);
             let set = "";
             set += ".input__label--yoko::before {";
@@ -233,9 +217,10 @@ module.exports = class extends Input {
         try {
             if (undefined === prm) {
                 /* getter */
-                return this.confmng("accent-color");
+                return this.confmng("accentColor");
             }
             /* setter */
+	    this.confmng("accentColor",prm);
             let clr = comutl.getcolor(prm);
             let set = "";
             set += ".input__label--yoko::after {";
@@ -243,7 +228,6 @@ module.exports = class extends Input {
             set += (null === clr) ? ";" : clr.toString() + ";";
             set += "}";
             comutl.addstyle("mofron-comp-yoko", set);
-	    
 	    input_dom.style({ color: clr.toString() });
 	} catch (e) {
             console.error(e.stack);

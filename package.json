@@ -1,6 +1,6 @@
 {
   "name": "mofron-comp-yoko",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "[mofron](https://mofron.github.io/mofron/) is module based frontend framework.",
   "main": "index.js",
   "scripts": {
